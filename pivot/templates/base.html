@@ -1,0 +1,129 @@
+
+
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% block head %}
+    {% endblock %}
+  
+  </head>
+   <style>
+     
+   </style>
+  <body>
+<nav class="navbar navbar-expand-lg dark bg-dark">
+    <a class="navbar-brand" href="#">Pivot</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      
+    </div>
+    
+  </nav>
+
+  <form>
+    <!-- <div class="row"> -->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Schema</label>
+          <input type="email" class="form-control" style="width: 400px;">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Ticket</label>
+          <input type="password" class="form-control" style="width: 400px;">
+        </div>
+        <div class="form-group col-md-6" >
+          <label for="inputAddress">Object</label>
+          <input type="text" class="form-control" style="width: 400px;">
+        </div>
+      <!-- </div> -->
+    </div> 
+    </div>
+    <button type="submit" class="btn btn-primary"><a href="/output/">Submit</a></button>
+  </form>
+  <div>
+    {% block body %}
+    {% endblock %}</div>
+</body>
+  </html>
+
+
+
+<!-- table row and column code -->
+
+
+<!-- <head>
+  <title>HTML Table with a Header, Footer and Body</title>
+  <style>
+      table {
+          width: 300px;
+          border-collapse: collapse;
+      }
+      table, th, td {
+          border: 1px solid black;
+      }
+      th, td {
+          padding: 10px;
+          text-align: left;
+      }
+  </style>
+</head>
+<body>
+
+
+<table>
+  <thead>
+      <tr>
+          <th>Date/Time</th>
+          <th>Req ID</th>
+<th>Username</th>
+<th>Status</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+        {% for item in data %}
+        <ul>
+
+          <td>{{item.Date}}</td>
+          <td>1</td>
+          <td>{{item.Username}}</td>
+{% endfor %}
+
+
+<td><a href="url">Running</a></td>
+</ul>
+      </tr>
+     
+
+  </tbody>
+  
+</table>
+</body> -->

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block head %}
+<title>HTML Table with a Header, Footer and Body</title>
+    <style>
+        table {
+            width: 300px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+
+  <table>
+    <thead>
+        <tr>
+            <th>Date/Time</th>
+            <th>Req ID</th>
+<th>Username</th>
+<th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          {% for item in data %}
+          <ul>
+
+            <td>{{item.Date}}</td>
+            <td>1</td>
+            <td>{{item.Username}}</td>
+{% endfor %}
+
+
+<td><a href="url">Running</a></td>
+</ul>
+        </tr>
+       
+
+    </tbody>
+    
+</table>
+
+{% endblock body %}
