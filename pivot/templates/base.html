@@ -9,22 +9,20 @@
   
   </head>
    <style>
-     .form-col{
-       margin-left: 40%;
-     }
      .center{
        margin-left: 40%;
      }
-     a {
-        color: black;
-        text-decoration: none;
-        background-color: transparent;
-        -webkit-text-decoration-skip: objects;
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    a:hover {
-        color: black;
-        text-decoration: underline;
-    }
+    .btn-primary {
+    color: #fff;
+    background-color: white !important;
+    border-color: #007bff;
+}
 
    </style>
   <body>
@@ -64,82 +62,29 @@
     
   </nav>
 
-  <form>
-    <!-- <div class="row"> -->
-      <div class="form-col">
-        <div class="form-group">
-          <label for="inputEmail4">Schema</label>
-          <input type="email" class="form-control" style="width: 400px;">
-        </div>
-        <div class="form-group">
-          <label for="inputPassword4">Ticket</label>
-          <input type="password" class="form-control" style="width: 400px;">
-        </div>
-        <div class="form-group" >
-          <label for="inputAddress">Object</label>
-          <input type="text" class="form-control" style="width: 400px;">
-        </div>
-      <!-- </div> -->
-    </div> 
-    <!-- </div> -->
-    <button type="submit" class="center btn btn-primary"><a href="/output/">Submit</a></button>
-  </form>
-  <div>
+  
+      <div class="container">
+        <form>
+          <div class="form-col">
+            <div class="form-group">
+              <label for="inputEmail4">Schema</label>
+              <input type="email" class="form-control" style="width: 400px;">
+            </div>
+            <div class="form-group">
+              <label for="inputPassword4">Ticket</label>
+              <input type="password" class="form-control" style="width: 400px;">
+            </div>
+            <div class="form-group" >
+              <label for="inputAddress">Object</label>
+              <input type="text" class="form-control" style="width: 400px;">
+            </div>
+        </div> 
+        <button type="submit" class="center btn btn-primary"><a href="/output/">Submit</a></button>
+        </form>
+      </div>
+      <br>
+  <div class="container">
     {% block body %}
     {% endblock %}</div>
 </body>
-  </html>
-
-
-
-<!-- table row and column code -->
-
-
-<!-- <head>
-  <title>HTML Table with a Header, Footer and Body</title>
-  <style>
-      table {
-          width: 300px;
-          border-collapse: collapse;
-      }
-      table, th, td {
-          border: 1px solid black;
-      }
-      th, td {
-          padding: 10px;
-          text-align: left;
-      }
-  </style>
-</head>
-<body>
-
-
-<table>
-  <thead>
-      <tr>
-          <th>Date/Time</th>
-          <th>Req ID</th>
-<th>Username</th>
-<th>Status</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-        {% for item in data %}
-        <ul>
-
-          <td>{{item.Date}}</td>
-          <td>1</td>
-          <td>{{item.Username}}</td>
-{% endfor %}
-
-
-<td><a href="url">Running</a></td>
-</ul>
-      </tr>
-     
-
-  </tbody>
-  
-</table>
-</body> -->
+</html>
