@@ -13,37 +13,42 @@
             padding: 10px;
             text-align: left;
         }
+        .center{
+            margin-left: 40%;
+        }
     </style>
 {% endblock %}
 {% block body %}
-
-  <table>
-    <thead>
-        <tr>
-            <th>Date/Time</th>
-            <th>Req ID</th>
-<th>Username</th>
-<th>Status</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-          {% for item in data %}
-          <ul>
-
-            <td>{{item.Date}}</td>
-            <td>1</td>
-            <td>{{item.Username}}</td>
-{% endfor %}
-
-
-<td><a href="url">Running</a></td>
-</ul>
-        </tr>
-       
-
-    </tbody>
-    
-</table>
+    <div class="center">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date/Time</th>
+                    <th>Req ID</th>
+        <th>Username</th>
+        <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  {% for item in data %}
+                  <ul>
+        
+                    <td>{{item.Date}}</td>
+                    <td>1</td>
+                    <td>{{item.Username}}</td>
+        {% endfor %}
+        
+        
+        <td><a href="url">Running</a></td>
+        </ul>
+                </tr>
+               
+        
+            </tbody>
+            
+        </table>
+    </div>
+  
 
 {% endblock body %}
