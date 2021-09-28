@@ -57,10 +57,10 @@ def login():
 @app.route('/home/',methods=['GET','POST'])
 # @login_required
 def home():
-   print(request.form['username'])
-   data1 = User(req_id=request.form['req_id'],username=request.form['username'],status=request.form['status'])
-   db.session.add_all([data1])
-   db.session.commit()
+#    print(request.form['username'])
+#    data1 = User(req_id=request.form['req_id'],username=request.form['username'],status=request.form['status'])
+#    db.session.add_all([data1])
+#    db.session.commit()
    data =  User.query.order_by(User.req_id.desc(), User.req_id.desc()).all()
    return render_template('index.html',data=data)
 
