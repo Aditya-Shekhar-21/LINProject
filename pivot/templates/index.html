@@ -3,24 +3,26 @@
 <title>HTML Table with a Header, Footer and Body</title>
     <style>
         table {
-            width: 300px;
+            width: 600px;
             border-collapse: collapse;
         }
         table, th, td {
             border: 1px solid black;
         }
         th, td {
-            padding: 10px;
+            padding: 0px;
             text-align: left;
         }
+        
     </style>
 {% endblock %}
 {% block body %}
         <table>
             <thead>
                 <tr>
-                    <th>Date/Time</th>
+                    <th>Date&Time</th>
                     <th>Req ID</th>
+                    
         <th>Username</th>
         <th>Status</th>
                 </tr>
@@ -29,14 +31,17 @@
                 <tr>
                   {% for item in data %}
                   <ul>
+                    <tr>
+                    <td>{{item.date_time}}</td>
+                   <td>{{item.req_id}}</td>
+                    <td>{{item.username}}</td>
         
-                    <td>{{item.Date}}</td>
-                    <td>1</td>
-                    <td>{{item.Username}}</td>
+                <td>{{item.status}}</td>
+            </tr>
+
+        
         {% endfor %}
-        
-        
-        <td><a href="url">Running</a></td>
+
         </ul>
                 </tr>
                
