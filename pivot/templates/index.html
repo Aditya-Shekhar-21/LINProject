@@ -3,14 +3,17 @@
 <title>HTML Table with a Header, Footer and Body</title>
     <style>
         table {
-            width: 600px;
+            width: 605px;
             border-collapse: collapse;
+            position: absolute;
+
         }
         table, th, td {
             border: 1px solid black;
+
         }
         th, td {
-            padding: 0px;
+            padding: 3px;
             text-align: left;
         }
         
@@ -36,7 +39,7 @@
                    <td>{{item.req_id}}</td>
                     <td>{{item.username}}</td>
         
-                <td><a href="settlment_pkg.html">completed</a></td>
+                <td><a href="/settlment_pkg">completed</a></td>
             </tr>
 
         
