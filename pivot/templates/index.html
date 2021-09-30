@@ -1,43 +1,82 @@
 {% extends "base.html" %}
 {% block head %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
+
 <title>HTML Table with a Header, Footer and Body</title>
     <style>
         table {
-            width: 605px;
+            width: 750px;
             border-collapse: collapse;
-            position: absolute;
+            position: relative;
 
         }
         table, th, td {
-            border: 1px solid black;
+            border: 2px solid black;
 
         }
         th, td {
             padding: 3px;
             text-align: left;
         }
+        #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* #customers tr:nth-child(even){background-color: #f2f2f2;} */
+table tr:nth-child(odd) td{
+           background:#ccc;
+}
+table tr:nth-child(even) td{
+            background:white;
+}
+#customers tr:hover {background-color: #ddd;}
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
         
     </style>
 {% endblock %}
 {% block body %}
-        <table align="center">
+        <!-- <div style = "width: 500px; height: 300px; overflow: auto;margin-left: 50px; border: 1px solid;"> -->
+        <!-- <div class="table-responsive container" align="center">  -->
+        <table align="center" id="customers">            
+        <!-- <table class= "freeze-table" width="700px"> -->
             <thead>
                 <tr>
                     <th>Date&Time</th>
                     <th>Req ID</th>
                     
         <th>Username</th>
+        <th>Schema</th>
+        <th>Ticket</th>
+        <th>Object Name</th>
+
         <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                   {% for item in data %}
-                  <ul>
+                  
                     <tr>
                     <td>{{item.date_time}}</td>
                    <td>{{item.req_id}}</td>
                     <td>{{item.username}}</td>
+                    <td>{{item.schema}}</td>
+                    <td>{{item.ticket}}</td>
+                    <td>{{item.object_name}}</td>
         
                 <td><a href="/settlment_pkg">completed</a></td>
             </tr>
@@ -45,11 +84,13 @@
         
         {% endfor %}
 
-        </ul>
+
                 </tr>
                
         
             </tbody>
             
         </table>
+
+
 {% endblock body %}

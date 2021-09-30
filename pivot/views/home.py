@@ -17,25 +17,37 @@ login_manager = LoginManager()
 
 #     return wrap
 
+@user_homes.route('/home-form/',methods=['GET'])
+def home_template():
+    data =  User.query.order_by(User.req_id.desc(), User.req_id.desc()).all()
+    return render_template('index.html',data=data)
+
+
 
 
 @user_homes.route('/home/',methods=['GET','POST'])
 # @login_required
 def home():
-    # data = [{
-    #     "status":"complete",
+    
+    data1 = User(username="Admin",
+    schema=request.form['schema'],
+    ticket=request.form['ticket'],
+    object_name=request.form['object_name'],
+    status="completed")
 
-    # }]
-    # data1 = User(username=request.form['username'],status=request.form['status'])
-    # db.session.add_all([data1])
-    # db.session.commit()
+    db.session.add_all([data1])
+    db.session.commit()
+
     data =  User.query.order_by(User.req_id.desc(), User.req_id.desc()).all()
-#    print(data)
+
     return render_template('index.html',data=data)
 
 
 
-# @user_homes.route('/register/',methods=['GET', 'POST'])
-# def register():
-#     return render_template('register.html')
+
+
+
+@user_homes.route('/register/',methods=['GET', 'POST'])
+def register():
+    return render_template('register.html')
     
